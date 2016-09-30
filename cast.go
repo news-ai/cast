@@ -12,9 +12,9 @@ func ToBool(i interface{}) bool {
 	return v
 }
 
-func ToTime(i interface{}) time.Time {
-	v, _ := ToTimeE(i)
-	return v
+func ToTime(i interface{}) (time.Time, error) {
+	v, err := ToTimeE(i)
+	return v, err
 }
 
 func ToDuration(i interface{}) time.Duration {
